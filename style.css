@@ -1,0 +1,106 @@
+/* Warna utama: ubah di sini */
+:root{
+  --bg:#F5F8FB; --surface:#fff; --ink:#071B2B; --muted:#56687A;
+  --g:#2F7FB0; --btn:#071B2B; --tint:#E7EEF4; --line:rgba(7,27,43,.09);
+  --shadow:0 8px 28px rgba(7,27,43,.10); --r:22px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:var(--btn);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:44px 0 8px}
+
+/* Navigasi */
+nav{position:sticky;top:0;z-index:10;padding-top:env(safe-area-inset-top,0);background:rgba(255,255,255,.72);
+  backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav .links{display:flex;gap:6px}
+nav .links a{color:var(--muted);font-size:14px;padding:6px 12px;border-radius:999px}
+nav .links a:hover{background:var(--tint);color:var(--btn)}
+@media(max-width:620px){nav .links a:nth-child(n+4){display:none}}
+
+/* Hero */
+.hero{padding:56px 0 24px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero .pic{order:-1;max-width:180px}}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--tint);font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--g)}
+h1{font-size:clamp(30px,5.5vw,48px);line-height:1.1;letter-spacing:-.03em;margin:16px 0 14px}
+h1 span{color:var(--g)}
+.lead{color:var(--muted);font-size:18px;max-width:54ch}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-block;padding:12px 20px;border-radius:14px;font-weight:600;font-size:15px}
+.btn.p{background:var(--btn);color:#fff}
+.btn.s{background:var(--surface);border:1px solid var(--line)}
+.pic img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:36%;box-shadow:var(--shadow);background:var(--tint)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:28px;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:13px}
+
+/* Judul bagian */
+.eyebrow{color:var(--g);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(26px,4vw,34px);letter-spacing:-.02em;margin:6px 0 20px}
+.note{color:var(--muted);margin:-8px 0 16px}
+
+/* Kotak dan kartu */
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.box h3{font-size:17px;margin-bottom:4px}
+.box p{color:var(--muted);font-size:14.5px}
+.box p+p{margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{background:var(--tint);font-size:13px;padding:5px 12px;border-radius:999px}
+.card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.card .th{height:100px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:800;font-size:26px;letter-spacing:-.02em;
+  background:linear-gradient(135deg,#071B2B,#17415F 60%,#2F7FB0)}
+.card .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{background:var(--tint);font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+.tags .st{background:#FFF4D6;color:#7A5600}
+.more{margin-top:auto;font-weight:600;font-size:14px}
+.hide{display:none}
+
+/* Segmented control (filter) */
+.seg{display:inline-flex;background:#E1E9F0;padding:3px;border-radius:12px;margin-bottom:18px;flex-wrap:wrap}
+.seg button{border:0;background:none;font:inherit;font-size:14px;font-weight:600;color:var(--muted);padding:7px 16px;border-radius:10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--btn);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+
+/* Pendidikan dan pengalaman */
+.two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+h3.sub{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:22px 0 10px}
+.box>.more{display:inline-block;margin-top:12px;font-weight:600;font-size:14px}
+
+/* Bug */
+.bug{margin-bottom:12px;padding:0}
+.bug summary{cursor:pointer;padding:16px 20px;list-style:none}
+.bug summary::-webkit-details-marker{display:none}
+.bug summary::before{content:"▸ "}
+.bug[open] summary::before{content:"▾ "}
+.sev{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;background:#FDE8E8;color:#9B1C1C;margin-left:6px}
+.sev.m{background:#FFF4D6;color:#7A5600}
+.bug dl{padding:6px 20px 18px;display:grid;grid-template-columns:150px 1fr;gap:8px 16px;border-top:1px solid var(--line)}
+.bug dt{font-weight:600;padding-top:8px}
+.bug dd{padding-top:8px;color:var(--muted)}
+.bug ol{padding-left:18px}
+@media(max-width:600px){.bug dl{grid-template-columns:1fr}.bug dd{padding-top:0}}
+
+/* Kontak */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;background:var(--surface);border:1px solid var(--line);
+  border-radius:28px;padding:32px;box-shadow:var(--shadow);margin-top:20px}
+@media(max-width:760px){.contact{grid-template-columns:1fr;padding:22px}}
+.contact h2{margin-bottom:10px}
+.soc{display:flex;gap:10px;margin-top:22px}
+.soc a{width:44px;height:44px;border-radius:14px;background:var(--tint);display:grid;place-items:center}
+.soc a:hover{background:var(--btn);color:#fff}
+.soc svg{width:20px;height:20px}
+form{display:grid;gap:12px}
+label{font-size:13px;font-weight:600;display:grid;gap:6px}
+input,textarea{font:inherit;font-size:15px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input:focus,textarea:focus{outline:2px solid var(--g);outline-offset:1px}
+textarea{min-height:120px;resize:vertical}
+form .btn{border:0;cursor:pointer;font:inherit;font-weight:600}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:28px 0 36px}
